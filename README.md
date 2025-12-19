@@ -52,7 +52,7 @@ Po uruchomieniu zobaczysz w konsoli komunikaty o utworzonych postach.
 - Express
 - EJS
 - MongoDB
-- bcrypt (hashowanie haseł)
+- crypto (hashowanie haseł)
 - CSS / HTML
 
 ## Autorzy
