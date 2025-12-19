@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+<main>
+    <div class="container">
+        <article>
+            <h2><%= post.title %></h2>
+            <div class="meta">
+                <span><strong>Autor:</strong> <%= post.author %></span>
+                <span><strong>Data publikacji:</strong> <%= post.createdAt.toLocaleString() %></span>
+                <span><strong>Kategoria:</strong> <span style="background: #ff4444; color: white; padding: 3px 8px; border-radius: 15px; font-size: 0.9rem; font-weight: bold;"><%= post.category %></span></span>
+            </div>
+            <div class="content"><%= post.content %></div>
+        </article>
+    </div>
+</main>
+<%- include('../partials/footer') %>

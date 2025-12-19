@@ -1,0 +1,25 @@
+Instrukcja uruchomienia MongoDB i projektu LiberalPost za pomocą Docker:
+
+1. Upewnij się, że masz zainstalowanego Dockera.
+
+2. Uruchom MongoDB w kontenerze:
+   docker run -d -p 27017:27017 --name liberalpost-mongo mongo:6
+
+3. Sprawdź logi kontenera:
+   docker logs -f liberalpost-mongo
+
+4. Aby zatrzymać kontener:
+   docker stop liberalpost-mongo
+
+5. Aby usunąć kontener:
+   docker rm liberalpost-mongo
+
+6. Konfiguracja projektu:
+   - W pliku storage.js lub w pliku konfiguracyjnym MongoDB ustaw:
+     mongodb://localhost:27017/liberalpost
+
+7. Uruchom projekt Node.js:
+   npm install
+   npm start
+
+Projekt powinien działać poprawnie pod adresem http://localhost:3000

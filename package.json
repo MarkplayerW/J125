@@ -1,0 +1,22 @@
+{
+  "name": "liberalpost",
+  "version": "1.0.0",
+  "description": "A satirical website, in the style of The Onion, built with Node.js, Express, and EJS.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": ["satire", "news", "nodejs", "express", "ejs"],
+  "author": "Daniel Sobala",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "express-session": "^1.18.2",
+    "mongodb": "^7.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

@@ -1,0 +1,52 @@
+<%- include('../partials/header') %>
+
+<main>
+    <div class="container">
+        <h2>Lista postów</h2>
+
+        <% if (user && viewedPosts && viewedPosts.length > 0) { %>
+            <section class="viewed-posts">
+                <h3>Ostatnio czytane</h3>
+                <ul>
+                    <% viewedPosts.forEach(post => { %>
+                        <li>
+                            <a href="/posts/<%= post.slug %>"><%= post.title %></a>
+                        </li>
+                    <% }) %>
+                </ul>
+            </section>
+        <% } %>
+
+        <form method="GET" action="/">
+            <label for="category">Filtruj po kategorii:</label>
+            <input type="text" name="category" id="category" value="<%= category || '' %>">
+            <button type="submit">Filtruj</button>
+        </form>
+
+        <p style="text-align: center; margin-bottom: 30px;">
+            Sortuj:
+            <a href="/?sort=createdAt" style="margin: 0 10px;">Data</a> |
+            <a href="/?sort=title" style="margin: 0 10px;">Tytuł</a>
+        </p>
+
+        <div class="posts-grid">
+            <% if (posts.length === 0) { %>
+                <p style="grid-column: 1 / -1; text-align: center; font-size: 1.2rem; color: #666;">Brak postów do wyświetlenia</p>
+            <% } else { %>
+                <% posts.forEach(post => { %>
+                    <div class="post-card">
+                        <a href="/posts/<%= post.slug %>">
+                            <h3><%= post.title %></h3>
+                            <div class="meta">
+                                <span class="category"><%= post.category %></span>
+                                <%= post.createdAt.toLocaleString() %>
+                            </div>
+                        </a>
+                    </div>
+                <% }) %>
+            <% } %>
+        </div>
+    </div>
+</main>
+
+<%- include('../partials/footer') %>

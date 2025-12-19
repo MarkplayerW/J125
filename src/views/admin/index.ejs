@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+<main>
+    <h2>Panel admina</h2>
+    <a href="/admin/posts/new">Dodaj post</a>
+    <ul>
+        <% posts.forEach(post => { %>
+            <li>
+                <%= post.title %> 
+                <a href="/admin/posts/<%= post.id %>/edit">Edytuj</a>
+                <form action="/admin/posts/<%= post.id %>/delete" method="POST" style="display:inline;">
+                    <button>Usuń</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+</main>
+<%- include('../partials/footer') %>
